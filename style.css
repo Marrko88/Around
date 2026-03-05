@@ -16,7 +16,7 @@ html, body {
     position: relative;
     min-height: 100vh;
     background: rgba(0, 0, 0, 1);
-    padding: 45px 200px 0 200px;
+    padding: 45px 200px 60px 200px;
 }
 
 .container {

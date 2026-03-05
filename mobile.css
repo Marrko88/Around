@@ -1,7 +1,7 @@
 @media (max-width: 768px){
 
     .page{
-        padding: 28px 19px 0 19px;
+        padding: 28px 19px 60px 19px;
     }
 
     .container {
@@ -70,6 +70,8 @@
         width: 100%;
         max-width: 282px;
     }
+
+
 }
 
 @media screen and (max-width: 320px) {
@@ -82,12 +84,23 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        right: 50%;
         height: 1px;
         background: rgba(84, 84, 84, 1);
         transform: translateX(-50%);
         width: 100vw;
+        content: "";
     }
+
+    .page{
+        padding: 28px 19px 36px 19px;
+    }
+
+    .footer__cooperate{
+        font-size: 14px;
+    }
+     .footer{
+         margin-top: 48px;
+     }
 }
 
 @media (max-width: 270px){
