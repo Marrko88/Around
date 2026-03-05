@@ -82,11 +82,11 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        right: 50%;
         height: 1px;
         background: rgba(84, 84, 84, 1);
         transform: translateX(-50%);
         width: 100vw;
+        content: '';
     }
 }
 
