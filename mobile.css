@@ -71,3 +71,45 @@
         max-width: 282px;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .header {
+        position: relative;
+        border-bottom: none;
+    }
+
+    .header::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        height: 1px;
+        background: rgba(84, 84, 84, 1);
+        transform: translateX(-50%);
+        width: 100vw;
+    }
+}
+
+@media (max-width: 270px){
+    .explorer__name {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        max-width: 260px;
+        word-break: break-word;
+    }
+
+    .explorer__stats {
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .trip__name{
+        font-size: 14px;
+    }
+
+    .trip__img{
+        width: auto;
+        height: auto;
+    }
+}

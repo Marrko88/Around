@@ -128,6 +128,7 @@ html, body {
 }
 
 .trip__img{
+    display: flex;
     width: 100%;
     height: 282px;
 }
