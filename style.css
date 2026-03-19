@@ -299,3 +299,87 @@ html, body {
     transform: translateY(-50%) rotate(-45deg);
 }
 
+
+
+.trip__info img[alt="likes"] {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+
+.trip__info img[alt="likes"].liked {
+    background: url(img/h_like.png) no-repeat center center;
+}
+
+
+
+/*Модалка для картинки*/
+
+.image__modal_close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    width: 14px;
+    height: 14px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* общие стили для линий */
+.image__modal_close::before,
+.image__modal_close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 16px;
+    height: 2px;
+    background-color: #B3B3B3;
+    transform-origin: center;
+}
+
+
+.image__modal_close::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+.image__modal_close::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+.image__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.image__modal_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.image__modal_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image__modal_img {
+    width: 600px;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
