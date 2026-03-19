@@ -69,7 +69,7 @@ function blackHearts(){
     });
 }
 
-function openImageModal(){
+function setSettingsImageModal(){
     document.querySelectorAll('.trip__img img').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() {
@@ -99,5 +99,5 @@ if (changeProfile) {
 
 document.addEventListener('DOMContentLoaded', blackHearts);
 
-openImageModal();
+setSettingsImageModal();
 
