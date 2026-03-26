@@ -52,7 +52,8 @@ function addListenerOverlay(parent){
 
 function sendForm(e){
     e.preventDefault();
-
+    //todo проверка на заполенность данных (вывод ошибки кастомной в интерфейсе)
+    //todo после save закрыть окно, если все успешно
     const name = nameInput.value;
     const surname = surnameInput.value;
     const profession = professionInput.value;
@@ -95,7 +96,7 @@ function saveAddingTrip(e){
 
     const tripBlock = document.getElementById('tripBlock');
     const trip_img = document.getElementById('srcTripImg').value;
-    //todo сделать проверку на url
+    //todo сделать проверку на url и пустые поля
     const trip_name = document.getElementById('inputTripName').value;
 
     const contentTrip = document.createElement('div');
