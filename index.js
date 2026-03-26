@@ -101,6 +101,7 @@ function saveAddingTrip(e){
 
     const tripBlock = document.getElementById('tripBlock');
     const trip_img = document.getElementById('srcTripImg').value;
+    //todo сделать проверку на url
     const trip_name = document.getElementById('inputTripName').value;
 
     const contentTrip = document.createElement('div');
