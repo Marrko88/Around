@@ -3,7 +3,7 @@ const modalAddingTrip = document.querySelector('#modal-adding-trip');
 const form = modalChangingProfile.querySelector('.modal__form');
 const changeProfile = document.getElementById('change_profile');
 
-const buttonCloseModel = modalChangingProfile.querySelector('.modal__close');
+// const buttonCloseModel = modalChangingProfile.querySelector('.modal__close');
 const profileAvatar = document.querySelector('.profile__avatar img');
 
 const nameInput = form.querySelector('#name_input');
@@ -16,7 +16,6 @@ const profileJob = document.querySelector('.explorer__stats');
 
 const imageModal = document.querySelector('.image__modal');
 const modalImg = document.querySelector('.image__modal_img');
-const modalClose = document.querySelector('.image__modal_close');
 
 const plus = document.querySelector('.profile__add-trip');
 
@@ -31,16 +30,23 @@ const openModalChangeProfile = ()=>{
     professionInput.value = job;
     avatarInput.value = avatar;
 
-
     modalChangingProfile.hidden = false;
     document.body.style.overflow = 'hidden';
-    //todo дорабоать скрытие формы
-
+    addListenerOverlay(modalChangingProfile);
+    addListenerClose(modalChangingProfile);
 };
 
-const closeModal = ()=>{
-    modalChangingProfile.hidden = true;
-    document.body.style.overflow = '';
+const addListenerClose = (parent)=>{
+    parent.querySelector('.modal__close').addEventListener('click', ()=>{
+        parent.hidden = true;
+        document.body.style.overflow = '';
+    }, {once: true});
+
+}
+function addListenerOverlay(parent){
+    parent.querySelector('.modal__overlay').addEventListener('click', () => {
+        parent.hidden = true;
+    }, {once: true});
 }
 
 
@@ -55,8 +61,6 @@ function sendForm(e){
     profileName.textContent = `${name} ${surname}`;
     profileJob.textContent = profession;
     profileAvatar.src = avatar;
-
-    closeModal();
 }
 function blackHearts(){
     console.log('blackHearts запущена'); // ← ДОБАВИТЬ
@@ -82,20 +86,8 @@ function setSettingsImageModal(){
             imageModal.hidden = false;
         });
     });
-    modalClose.addEventListener('click', () => {
-        imageModal.hidden = true;
-    });
-
-
-    imageModal.querySelector('.image__modal_overlay').addEventListener('click', () => {
-        imageModal.hidden = true;
-    });
-}
-
-
-function closeAddTripModal() {
-    modalAddingTrip.hidden = true;
-    document.body.style.overflow = '';
+    addListenerClose(imageModal);
+    addListenerOverlay(imageModal);
 }
 
 function saveAddingTrip(e){
@@ -133,21 +125,22 @@ function saveAddingTrip(e){
     tripInfo.appendChild(imgHeart);
 
     tripBlock.prepend(contentTrip);
-
-    closeAddTripModal();
 }
 
 function openModalAddingTrip(e){
     e.preventDefault();
     modalAddingTrip.hidden = false;
     document.body.style.overflow = 'hidden';
+    addListenerOverlay(modalAddingTrip);
+    addListenerClose(modalAddingTrip);
 }
 
 if (changeProfile) {
-    buttonCloseModel.addEventListener('click', closeModal);
+
     changeProfile.addEventListener('click', openModalChangeProfile);
     form.addEventListener('submit', sendForm);
     plus.addEventListener('click', openModalAddingTrip);
+
 }else {
     console.warn('Modal elements not found');
 }
@@ -159,9 +152,9 @@ document.addEventListener('DOMContentLoaded', function (){
     blackHearts();
     setSettingsImageModal();
     document.querySelector('#button_trip').addEventListener('click', saveAddingTrip);
-    document.getElementById('close_trip').addEventListener('click', closeAddTripModal);
-    //todo убрать, без id
-    document.getElementById('close_overlay_trip').addEventListener('click', closeAddTripModal);
+
+
+
 });
 
 
