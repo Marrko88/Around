@@ -34,6 +34,8 @@ const openModalChangeProfile = ()=>{
 
     modalChangingProfile.hidden = false;
     document.body.style.overflow = 'hidden';
+    //todo дорабоать скрытие формы
+
 };
 
 const closeModal = ()=>{
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function (){
     setSettingsImageModal();
     document.querySelector('#button_trip').addEventListener('click', saveAddingTrip);
     document.getElementById('close_trip').addEventListener('click', closeAddTripModal);
+    //todo убрать, без id
     document.getElementById('close_overlay_trip').addEventListener('click', closeAddTripModal);
 });
 
