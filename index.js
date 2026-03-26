@@ -89,6 +89,7 @@ function setSettingsImageModal(){
 
     imageModal.querySelector('.image__modal_overlay').addEventListener('click', () => {
         imageModal.hidden = true;
+        
     });
 }
 
